@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        card_view:cardElevation="4dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:contentPadding="16dp">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:alpha="0.87"
+                        android:textSize="24sp"
+                        android:text="Feedback"
+                        android:id="@+id/feeddbackTitle"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:alpha="0.54"
+                android:textSize="14sp"
+                android:text="Your Feedback is Valuable to us. Please help us make this App provide better service to you. You can also give your suggestions on what new features you might like on this app."
+                android:id="@+id/feedbackText"
+                android:layout_below="@+id/feeddbackTitle"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:id="@+id/feedback"
+                android:layout_below="@+id/feedbackText"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/feedback"
+               android:textSize="16dp"
+               android:id="@+id/send"
+               android:onClick="Send"
+               android:textColor="#0097A7"
+               android:paddingTop="16dp"
+               android:paddingBottom="8dp"
+               android:layout_alignParentRight="true"
+               android:text="SEND FEEDBACK"
+               />
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
+

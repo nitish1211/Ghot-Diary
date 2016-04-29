@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.napps.acads.ghotdiary">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="com.napps.acads.ghotdiary.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.napps.acads.ghotdiary.C2D_MESSAGE" />
+
+    <application
+        android:name=".Extras.GhotDiary"
+        android:allowBackup="true"
+        android:icon="@drawable/gdlogob_sh"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/CustomActionBarTheme" >
+        <receiver
+            android:name=".Extras.GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.napps.acads.ghotdiary" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Extras.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.LectureSlides"
+            android:label="Lecture Slides" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Extras.MainActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.LECTURE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.DisplaySlides"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.DISPLAY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.GenChem"
+            android:label="General Chemistry" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.GENCHEM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.Meow"
+            android:label="MEOW" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MEOW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.MathOne"
+            android:label="Mathematics-I" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MATHONE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.GenBio"
+            android:label="General Biology" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.GENBIO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.EGraphics"
+            android:label="Engineering Graphics" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.EGRAPHICS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.TechRep"
+            android:label="Technical Report Writing" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.TECHREP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.HandoutOne"
+            android:label="Handout" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.HANDOUTONE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Extras.OtherDocs"
+            android:label="Important Docs" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.OTHERDOCS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.QPapers11"
+            android:label="Question Papers" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.LectureSlides" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.QPAPERS11" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Extras.Notice"
+            android:configChanges="orientation|screenSize"
+            android:label="Notice"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Extras.MainActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.QPAPERS11" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.ProfContact"
+            android:label="Contact Professors" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Extras.MainActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.PROFCONTACT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sem11.ProfDetails"
+            android:label="@string/app_name" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Sem11.ProfContact" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.PROFDETAILS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Extras.Nalanda"
+            android:label="Nalanda" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Extras.MainActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.NALANDA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Extras.Feedback"
+            android:label="@string/title_activity_feedback"
+            android:parentActivityName=".Extras.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Extras.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

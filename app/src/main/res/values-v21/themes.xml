@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <style name="CustomActionBarTheme" parent="android:Theme.Material.Light.DarkActionBar">
+       <item name="android:colorPrimary">@color/theme</item>
+       <item name="android:colorPrimaryDark">@color/darktheme</item>
+   </style>
+
+    <style name="EditTextColor" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">@color/accent</item>
+        <item name="colorControlHighlight">@color/accent</item>
+    </style>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <style name="Mytheme" parent="android:Theme.Material.Light.DarkActionBar">
+       <item name="android:colorPrimary">@color/theme</item>
+       <item name="android:colorPrimaryDark">@color/darktheme</item>
+       <item name="android:windowActionBarOverlay">true</item>
+       <item name="windowActionBarOverlay">true</item>
+   </style>
+</resources>

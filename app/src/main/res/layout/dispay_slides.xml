@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/web"
+            android:elevation="1dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:id="@+id/imageButton2"
+            android:elevation="12dp"
+            android:onClick="download"
+            android:src="@android:drawable/stat_sys_download"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/round_button_add"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="35dp" />
+
+    </RelativeLayout>
+</LinearLayout>

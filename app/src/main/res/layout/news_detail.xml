@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/big_card">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:id="@+id/pic"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Content goes here just putting crap here for now blah blah balha blah blah   blah blah blah blah blah blah blah blah blah blah "
+            android:id="@+id/news"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:layout_below="@id/pic"
+            android:layout_alignRight="@id/pic"
+            android:layout_alignLeft="@+id/pic"
+            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Time :"
+            android:id="@+id/textView10"
+            android:layout_below="@id/news"
+            android:layout_marginTop="20dp"
+            android:layout_alignStart="@+id/news"
+            android:layout_marginBottom="57dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:text="20/8/15"
+            android:textStyle="bold|italic"
+            android:id="@+id/date"
+            android:textColor="@color/black"
+            android:layout_below="@+id/textView12"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Venue :"
+            android:id="@+id/textView12"
+            android:layout_alignTop="@+id/textView10"
+            android:layout_toEndOf="@+id/time"
+            android:layout_marginStart="60dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="5105(LTC)"
+            android:textStyle="bold|italic"
+            android:textColor="@color/black"
+            android:id="@+id/venue"
+            android:layout_alignTop="@+id/date"
+            android:layout_alignStart="@+id/textView12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textStyle="bold|italic"
+            android:text="8:00 p.m"
+            android:textColor="@color/black"
+            android:id="@+id/time"
+            android:layout_below="@+id/date"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Contact No :"
+            android:id="@+id/textView15"
+            android:layout_alignTop="@+id/textView12"
+            android:layout_alignEnd="@+id/news" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="9929952604"
+            android:textColor="@color/black"
+            android:id="@+id/contact"
+            android:textStyle="bold|italic"
+            android:layout_below="@+id/textView15"
+            android:layout_alignEnd="@+id/pic"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="(Nitish)"
+            android:textStyle="bold|italic"
+            android:textColor="@color/black"
+            android:id="@+id/contactName"
+            android:layout_alignTop="@+id/time"
+            android:layout_alignStart="@+id/contact" />
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/loading"
+            android:layout_marginTop="163dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
