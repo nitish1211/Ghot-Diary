@@ -8,8 +8,8 @@ android {
         applicationId "com.napps.acads.ghotdiary"
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 10
-        versionName "2.3.0"
+        versionCode 11
+        versionName "2.4.0"
     }
     buildTypes {
         release {
@@ -19,13 +19,13 @@ android {
     }
     packagingOptions
             {
-                exclude 'META-INF/LICENSE.txt'
+                exclude 'META-INF/NOTICE'
+                exclude 'META-INF/LICENSE'
             }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
     compile 'com.android.support:design:23.1.0'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.google.android.gms:play-services-gcm:8.3.0'

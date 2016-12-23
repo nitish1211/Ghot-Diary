@@ -5,17 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
 
-    <permission
-        android:name="com.napps.acads.ghotdiary.C2D_MESSAGE"
-        android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.napps.acads.ghotdiary.C2D_MESSAGE" />
 
     <application
         android:name=".Extras.GhotDiary"
@@ -199,32 +190,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Sem11.ProfContact"
-            android:label="Contact Professors" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Extras.MainActivity" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.PROFCONTACT" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Sem11.ProfDetails"
-            android:label="@string/app_name" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Sem11.ProfContact" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.PROFDETAILS" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".Extras.Nalanda"
             android:label="Nalanda" >

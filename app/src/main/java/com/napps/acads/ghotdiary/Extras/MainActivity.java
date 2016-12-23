@@ -17,7 +17,6 @@ import com.napps.acads.ghotdiary.R;
 import com.napps.acads.ghotdiary.Sem11.DisplaySlides;
 import com.napps.acads.ghotdiary.Sem11.HandoutOne;
 import com.napps.acads.ghotdiary.Sem11.LectureSlides;
-import com.napps.acads.ghotdiary.Sem11.ProfContact;
 import com.napps.acads.ghotdiary.Sem11.QPapers11;
 
 
@@ -30,7 +29,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String item[] = {"Nalanda", "Lecture Slides", "Handouts", "TimeTable Booklet", "Previous Year Q.Papers", "Other Docs","Contact Profs.","Feedback"};
+        String item[] = {"Nalanda", "Lecture Slides", "Handouts", "TimeTable Booklet",
+                "Previous Year Q.Papers", "Other Docs","Feedback"};
         ListAdapter custom = new CustomAdapter(this, item);
 
         ListView homelist = (ListView) findViewById(R.id.homelist);
@@ -47,9 +47,11 @@ public class MainActivity extends Activity {
                                 break;
                             case 1:
                                 StartLecture();
+                                Toast.makeText(MainActivity.this, "Lecture slides from year 2014", Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
                                 StartHandout();
+                                Toast.makeText(MainActivity.this, "Handouts from year 2015", Toast.LENGTH_SHORT).show();
                                 break;
                             case 3:
                                 startTT();
@@ -61,10 +63,8 @@ public class MainActivity extends Activity {
                             case 5:
                                 startDocs();
                                 break;
+
                             case 6:
-                                startProf();
-                                break;
-                            case 7:
                                 startFeedback();
                                 break;
                             default:
@@ -113,11 +113,6 @@ public class MainActivity extends Activity {
         startActivity(d);
     }
 
-    public void startProf()
-    {
-        Intent p=new Intent(this,ProfContact.class);
-        startActivity(p);
-    }
 
     public void startFeedback()
     {
@@ -133,19 +128,5 @@ public class MainActivity extends Activity {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-//    public boolean checkPlayServices() {
-//        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(MainActivity.this);
-//        if (resultCode != ConnectionResult.SUCCESS) {
-//            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
-//                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
-//                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
-//            } else {
-//                Toast.makeText(MainActivity.this, "This device is not supported - Google Play Services.",Toast.LENGTH_SHORT).show();
-//                finish();
-//            }
-//            return false;
-//        }
-//        return true;
-//    }
 
 }

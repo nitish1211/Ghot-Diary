@@ -10,14 +10,16 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.napps.acads.ghotdiary.BGMail.GMailSender;
 import com.napps.acads.ghotdiary.R;
-import com.parse.ParseObject;
+
 
 import java.util.regex.Pattern;
 
@@ -46,7 +48,7 @@ public class Feedback extends Activity {
         data= feedback.getText().toString();
         if(!data.isEmpty())
         {
-            getAccount();
+            //getAccount();
 
 
             if (isNetworkAvailable())
@@ -96,11 +98,15 @@ public class Feedback extends Activity {
                 @Override
                 protected String doInBackground(Void... params) {
 
-                    ParseObject register2 = new ParseObject("Feedback");
-                    register2.put("Feedback", data);
-                    register2.put("EmailID", emailID);
-                    register2.saveInBackground();
-                    register2.unpinInBackground();
+                    try {
+                        GMailSender gMailSender = new GMailSender(getString(R.string.sender_email), getString(R.string.sender_password));
+                        Log.d("email", getString(R.string.admin_email));
+                        gMailSender.sendMail("GhotDiary Feedback", "Feedback :"+data, "no-reply@gmail.com", getString(R.string.admin_email));
+                    }
+                    catch (Exception e)
+                    {
+                        Log.e("SendMail", e.getMessage(), e);
+                    }
                     return msg;
                 }
 
@@ -113,19 +119,21 @@ public class Feedback extends Activity {
 
     }
 
-    public void getAccount()
-    {
-        Pattern emailPattern = Patterns.EMAIL_ADDRESS;
-        AccountManager manager = (AccountManager) getSystemService(ACCOUNT_SERVICE);
-        Account[] accounts = manager.getAccounts();
-        for (Account account : accounts) {
-            if (emailPattern.matcher(account.name).matches()) {
-                String possibleEmail = account.name;
-
-                emailID=emailID+possibleEmail+" , ";
-            }
-        }
-    }
+//    public String getAccount()
+//    {
+//        Pattern emailPattern = Patterns.EMAIL_ADDRESS;
+//        String possibleEmail="no-reply@gmail.com";
+//        AccountManager manager = (AccountManager) getSystemService(ACCOUNT_SERVICE);
+//        Account[] accounts = manager.getAccounts();
+//        for (Account account : accounts) {
+//            if (emailPattern.matcher(account.name).matches()) {
+//                 possibleEmail = account.name;
+//
+//                emailID=emailID+possibleEmail+" , ";
+//            }
+//        }
+//        return possibleEmail;
+//    }
 
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager

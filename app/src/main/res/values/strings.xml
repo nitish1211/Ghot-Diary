@@ -9,4 +9,8 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_feedback">Feedback</string>
+
+    <string name="admin_email">nitish1296@gmail.com</string>
+    <string name="sender_email">ghotdiary@gmail.com</string>
+    <string name="sender_password">ghot@Bits</string>
 </resources>
